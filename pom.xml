@@ -33,6 +33,7 @@
     <commons-dbutils.version>1.7</commons-dbutils.version>
     <duckdb.version>0.4.0</duckdb.version>
     <gson.version>2.9.0</gson.version>
+    <guava.version>31.1-jre</guava.version>
     <jdk.version>1.8</jdk.version>
     <maven.enforcer.maven-version>[3.1.1,)</maven.enforcer.maven-version>
     <maven.enforcer.jdk-version>[1.8,)</maven.enforcer.jdk-version>
@@ -44,6 +45,11 @@
         <groupId>com.google.code.gson</groupId>
         <artifactId>gson</artifactId>
         <version>${gson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${guava.version}</version>
       </dependency>
       <dependency>
         <groupId>org.duckdb</groupId>
@@ -61,6 +67,11 @@
     <dependency>
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>
