@@ -33,6 +33,7 @@ import picocli.CommandLine.ScopeType;
   subcommands = {
       Convert.class,
       Create.class,
+      Dbml.class,
       Describe.class,
       Head.class,
       Meta.class,
