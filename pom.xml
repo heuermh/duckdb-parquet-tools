@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.dishevelled</groupId>
     <artifactId>dsh-parent</artifactId>
-    <version>43-SNAPSHOT</version>
+    <version>43</version>
   </parent>
   <groupId>com.github.heuermh.duckdb</groupId>
   <artifactId>duckdb-parquet-tools</artifactId>
