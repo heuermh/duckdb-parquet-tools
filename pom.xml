@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.dishevelled</groupId>
     <artifactId>dsh-parent</artifactId>
-    <version>47</version>
+    <version>48</version>
   </parent>
   <groupId>com.github.heuermh.duckdb</groupId>
   <artifactId>duckdb-parquet-tools</artifactId>
@@ -31,7 +31,7 @@
   </issueManagement>
   <properties>
     <commons-dbutils.version>1.7</commons-dbutils.version>
-    <duckdb.version>1.1.1</duckdb.version>
+    <duckdb.version>1.1.2</duckdb.version>
     <gson.version>2.11.0</gson.version>
     <jdk.version>1.8</jdk.version>
     <maven.enforcer.maven-version>[3.6.3,)</maven.enforcer.maven-version>
