@@ -36,6 +36,7 @@ import picocli.CommandLine.ScopeType;
       Describe.class,
       Head.class,
       Meta.class,
+      Ratios.class,
       Schema.class,
       HelpCommand.class,
       GenerateCompletion.class
