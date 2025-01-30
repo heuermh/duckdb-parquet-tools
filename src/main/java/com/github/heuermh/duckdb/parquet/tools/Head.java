@@ -54,6 +54,7 @@ public final class Head implements Callable<Integer> {
     @Option(names = { "-p", "--pretty-print" })
     private boolean prettyPrint = false;
 
+    /** Head SQL query. */
     private static final String HEAD_SQL = "SELECT * from read_parquet('%s') LIMIT %d";
 
     @Override

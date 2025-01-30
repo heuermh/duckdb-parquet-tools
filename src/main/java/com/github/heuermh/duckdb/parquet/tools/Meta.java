@@ -44,6 +44,10 @@ public final class Meta implements Callable<Integer> {
     @Option(names = { "-u", "--url" })
     private String url = "jdbc:duckdb:";
 
+    @Option(names = { "--skip-header" })
+    private boolean skipHeader;
+
+    /** Meta SQL query. */
     private static final String META_SQL = "SELECT * from parquet_metadata('%s')";
 
     @Override
@@ -61,16 +65,24 @@ public final class Meta implements Callable<Integer> {
                     int columns = metaData.getColumnCount() + 1;
 
                     // print header
-                    for (int i = 1; i < columns; i++) {
-                        System.out.print(metaData.getColumnLabel(i) + "\t");
+                    if (!skipHeader) {
+                        for (int i = 1; i < columns; i++) {
+                            System.out.print(metaData.getColumnLabel(i));
+                            if (i < (columns - 1)) {
+                                System.out.print("\t");
+                            }
+                        }
+                        System.out.print("\n");
                     }
-                    System.out.print("\n");
 
                     // print rows
                     while (resultSet.next()) {
                         for (int i = 1; i < columns; i++) {
                             Object value = resultSet.getObject(i);
-                            System.out.print(value == null ? "" : value.toString() + "\t");
+                            System.out.print(value == null ? "" : value.toString());
+                            if (i < (columns - 1)) {
+                                System.out.print("\t");
+                            }
                         }
                         System.out.print("\n");
                     }

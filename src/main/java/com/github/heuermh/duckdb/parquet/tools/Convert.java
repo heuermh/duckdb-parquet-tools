@@ -45,7 +45,10 @@ public final class Convert implements Callable<Integer> {
     @Option(names = { "-c", "--codec" })
     private String parquetCodec = "ZSTD";
 
+    /** Create SQL statement. */
     private static final String CREATE_SQL = "CREATE TABLE records AS SELECT * from read_parquet('%s')";
+
+    /** Copy SQL statement. */
     private static final String COPY_SQL = "COPY records TO '%s' (FORMAT 'PARQUET', CODEC '%s')";
 
     @Override

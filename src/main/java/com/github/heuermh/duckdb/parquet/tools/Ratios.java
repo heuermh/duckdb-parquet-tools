@@ -44,7 +44,13 @@ public final class Ratios implements Callable<Integer> {
     @Option(names = { "-u", "--url" })
     private String url = "jdbc:duckdb:";
 
+    @Option(names = { "--skip-header" })
+    private boolean skipHeader;
+
+    /** Meta SQL statement. */
     private static final String META_SQL = "CREATE TABLE m AS SELECT * from parquet_metadata('%s')";
+
+    /** Ratios SQL query. */
     private static final String RATIOS_SQL = "SELECT column_id, path_in_schema, type, sum(num_values) AS n, sum(total_uncompressed_size) AS uncompressed, sum(total_compressed_size) AS compressed, (uncompressed/compressed) AS ratio, ((1 - (compressed/uncompressed)) * 100.0) AS savings FROM m GROUP BY column_id, path_in_schema, type ORDER BY column_id ASC";
 
     @Override
@@ -65,16 +71,24 @@ public final class Ratios implements Callable<Integer> {
                     int columns = metaData.getColumnCount() + 1;
 
                     // print header
-                    for (int i = 1; i < columns; i++) {
-                        System.out.print(metaData.getColumnLabel(i) + "\t");
+                    if (!skipHeader) {
+                        for (int i = 1; i < columns; i++) {
+                            System.out.print(metaData.getColumnLabel(i));
+                            if (i < (columns - 1)) {
+                                System.out.print("\t");
+                            }
+                        }
+                        System.out.print("\n");
                     }
-                    System.out.print("\n");
 
                     // print rows
                     while (resultSet.next()) {
                         for (int i = 1; i < columns; i++) {
                             Object value = resultSet.getObject(i);
-                            System.out.print(value == null ? "" : value.toString() + "\t");
+                            System.out.print(value == null ? "" : value.toString());
+                            if (i < (columns - 1)) {
+                                System.out.print("\t");
+                            }
                         }
                         System.out.print("\n");
                     }

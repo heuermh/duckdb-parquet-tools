@@ -45,6 +45,7 @@ public final class Create implements Callable<Integer> {
     @Option(names = { "-c", "--codec" })
     private String parquetCodec = "ZSTD";
 
+    /** Copy SQL statement. */
     private static final String COPY_SQL = "COPY records TO '%s' (FORMAT 'PARQUET', CODEC '%s')";
 
     @Override
