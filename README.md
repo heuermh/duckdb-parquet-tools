@@ -29,6 +29,7 @@ COMMANDS
   describe             Describe Parquet file columns as loaded by DuckDB.
   head                 Write the first n records from a Parquet file in JSON format.
   meta                 Query the metadata of a Parquet file as loaded by DuckDB.
+  ratios               Show data compression ratios from a Parquet file as loaded by DuckDB.
   schema               Query the internal schema of a Parquet file as loaded by DuckDB.
   help                 Display help information about the specified command.
   generate-completion  Generate bash/zsh completion script for duckdb-parquet-tools.
