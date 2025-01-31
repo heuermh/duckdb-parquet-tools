@@ -2,6 +2,7 @@
 
 [Apache Parquet format](https://parquet.apache.org/) tools for [DuckDB](https://duckdb.org/).
 
+
 ### Hacking duckdb-parquet-tools
 
 Install
@@ -33,4 +34,14 @@ COMMANDS
   schema               Query the internal schema of a Parquet file as loaded by DuckDB.
   help                 Display help information about the specified command.
   generate-completion  Generate bash/zsh completion script for duckdb-parquet-tools.
+```
+
+
+### Installing duckdb-parquet-tools via Homebrew
+
+`duckdb-parquet-tools` is available in Homebrew via the `homebrew-parquet-tools` tap, https://github.com/heuermh/homebrew-parquet-tools
+
+```bash
+$ brew tap heuermh/parquet-tools
+$ brew install duckdb-parquet-tools
 ```
