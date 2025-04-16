@@ -64,6 +64,11 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
       <groupId>org.duckdb</groupId>
       <artifactId>duckdb_jdbc</artifactId>
       <scope>runtime</scope>
