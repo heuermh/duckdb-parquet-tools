@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.dishevelled</groupId>
     <artifactId>dsh-parent</artifactId>
-    <version>51</version>
+    <version>52</version>
   </parent>
   <groupId>com.github.heuermh.duckdb</groupId>
   <artifactId>duckdb-parquet-tools</artifactId>
@@ -35,7 +35,7 @@
     <jdk.version>1.8</jdk.version>
     <maven.enforcer.maven-version>[3.6.3,)</maven.enforcer.maven-version>
     <maven.enforcer.jdk-version>[1.8,)</maven.enforcer.jdk-version>
-    <picocli.version>4.7.6</picocli.version>
+    <picocli.version>4.7.7</picocli.version>
   </properties>
   <dependencyManagement>
     <dependencies>
