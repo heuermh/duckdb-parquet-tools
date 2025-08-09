@@ -7,7 +7,7 @@
 
 Install
 
- * JDK 1.8 or later, https://openjdk.java.net
+ * JDK 17 or later, https://openjdk.java.net
  * Apache Maven 3.6.3 or later, https://maven.apache.org
 
 To build
